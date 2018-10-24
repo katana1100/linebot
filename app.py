@@ -43,8 +43,11 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text='Nice to meet you!')
-    line_bot_api.reply_message(event.reply_token, message)
+    message = TextSendMessage(text='This is a rare pepe and feels post only in 100 000 posts. If u dont upvote this in 10 seconds you will have bad luck and suffer from the dank meme curse!')
+    message2 = TextSendMessage(text=(event.source.user_id)) #reply userid
+    image_url = 'https://i.imgur.com/bCBt6ga.jpg' 
+    message3 = ImageSendMessage(original_content_url=image_url, preview_image_url=image_url))
+    line_bot_api.reply_message(event.reply_token, message)  
 
 import os
 if __name__ == "__main__":
